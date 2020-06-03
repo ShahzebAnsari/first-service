@@ -1,14 +1,25 @@
-spring.cloud.gateway.routes[2].id: second-service-greeting
-spring.cloud.gateway.routes[2].uri: https://localhost:8082/
-spring.cloud.gateway.routes[2].predicates[0]: Path= /secondService/greeting
-spring.cloud.gateway.routes[2].predicates[1]: Query= name, [a-zA-Z]+
-spring.cloud.gateway.routes[2].predicates[2]: Method= GET
-spring.cloud.gateway.routes[2].filters[0]: AddRequestHeader= request_header1, header_value1
-spring.cloud.gateway.routes[2].filters[1]: AddRequestParameter= name1, abc
-spring.cloud.gateway.routes[3].id: second-service-params
-spring.cloud.gateway.routes[3].uri: https://localhost:8082/
-spring.cloud.gateway.routes[3].predicates[0]: Path= /secondService/parameters
-spring.cloud.gateway.routes[3].predicates[1]: Query= key1, [a-zA-Z0-9]+
-spring.cloud.gateway.routes[3].predicates[2]: Method= GET
-spring.cloud.gateway.routes[3].filters[0]: AddRequestHeader= request_header1, header_value1
-spring.cloud.gateway.routes[3].filters[1]: AddRequestParameter= param1, value1
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: second-service-greeting
+          uri: https://localhost:8082/
+          predicates:
+            - Path= /secondService/greeting
+            - Query= name, [a-zA-Z]+
+            - Method= GET
+          filters:
+            - AddRequestHeader= request_header1, header_value1
+            - AddRequestParameter= name1, abc
+        - id: second-service-params
+          uri: https://localhost:8082/
+          predicates:
+            - Path= /secondService/parameters
+            - Query= key1, [a-zA-Z0-9]+
+            - Method= GET
+          filters:
+            - AddRequestHeader= request_header1, header_value1
+            - AddRequestParameter= param1, value1
+
+db:
+  name: inside-second-service
