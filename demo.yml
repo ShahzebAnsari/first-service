@@ -3,6 +3,8 @@ db:
 
 spring:
   cloud:
+    config:
+      overrideNone: true
     gateway:
       routes:
         - id: first-service-greeting
