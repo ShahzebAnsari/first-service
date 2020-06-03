@@ -1,26 +1,16 @@
 db:
   name: inside-demo
 
-spring:
-  cloud:
-    config:
-      overrideNone: true
-    gateway:
-      routes:
-        - id: first-service-greeting
-          uri: https://localhost:8081/
-          predicates:
-            - Path= /firstService/greeting
-            - Query= name, [a-zA-Z]+
-            - Method= GET
-          filters:
-            - AddRequestHeader= request_header1, header_value1
-            - AddRequestParameter= name1, abc
-        - id: first-service-headers
-          uri: https://localhost:8081/
-          predicates:
-            - Path= /firstService/headers
-            - Method= GET
-          filters:
-            - AddRequestHeader= request_header1, header_value1
-            - AddRequestHeader= request_header2, header_value2
+spring.cloud.gateway.routes[0].id: first-service-greeting
+spring.cloud.gateway.routes[0].uri: https://localhost:8081/
+spring.cloud.gateway.routes[0].predicates[0]: Path= /firstService/greeting
+spring.cloud.gateway.routes[0].predicates[1]: Query= name, [a-zA-Z]+
+spring.cloud.gateway.routes[0].predicates[2]: Method= GET
+spring.cloud.gateway.routes[0].filters[0]: AddRequestHeader= request_header1, header_value1
+spring.cloud.gateway.routes[0].filters[1]: AddRequestParameter= name1, abc
+spring.cloud.gateway.routes[1].id: first-service-headers
+spring.cloud.gateway.routes[1].uri: https://localhost:8081/
+spring.cloud.gateway.routes[1].predicates[0]: Path= /firstService/headers
+spring.cloud.gateway.routes[1].predicates[1]: Method= GET
+spring.cloud.gateway.routes[1].filters[0]: AddRequestHeader= request_header1, header_value1
+spring.cloud.gateway.routes[1].filters[1]: AddRequestHeader= request_header2, header_value2
