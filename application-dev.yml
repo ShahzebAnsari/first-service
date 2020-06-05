@@ -19,3 +19,6 @@ spring:
           filters:
             - AddRequestHeader= request_header1, header_value1
             - AddRequestHeader= request_header2, header_value2
+
+firstservice:
+  message: /firstService/classRoute
