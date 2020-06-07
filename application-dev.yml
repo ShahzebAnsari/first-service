@@ -21,4 +21,9 @@ spring:
             - AddRequestHeader= request_header2, header_value2
 
 firstservice:
-  message: /firstService/classRoute
+  path: /firstService/classRoute
+  method: GET
+  header: request_header1, header_value1
+  path: /firstService/classRoute2
+  method: GET
+  header: request_header2, header_value2
