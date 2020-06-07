@@ -23,7 +23,7 @@ spring:
 firstservice:
   path[0]: /firstService/classRoute
   method[0]: GET
-  header[0]: request_header1
+  header[0]: request_header1, request_value1
   path[1]: /firstService/classRoute2
   method[1]: GET
-  header[1]: request_header2
+  header[1]: request_header2, request_value2
