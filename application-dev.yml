@@ -22,7 +22,7 @@ spring:
 
 firstservice:
   message: /firstService/classRoute
-  path[0]: /firstService/classRou
+  path[0]: /firstService/classRoute
   method[0]: GET
   header[0]:
     name: request_header1
