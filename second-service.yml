@@ -22,4 +22,4 @@ spring:
             - AddRequestParameter= param1, value1
 
 db:
-  name: inside-second-service
+  name: updated-inside-second-service
